@@ -7,40 +7,104 @@
     <!-- daisyUi CDN link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- custom CND link -->
+    <!-- custom css link -->
     <link rel="stylesheet" href="styles/style.css">
-    <!-- font awesome CDN link -->
+    <!-- font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="font-poppins">
-    <!-- header-section-start -->
-    <header></header>
-    <!-- header-section-end -->
-    <!-- main-section-start -->
+    <!-- header section start here -->
+    <header>
+
+    </header>
+    <!-- header section end here -->
+
+    <!-- main section start here -->
     <main class="min-h-screen bg-[#010313] bg-[url(images/background.png)] bg-no-repeat bg-contain bg-center">
         <!-- home section start -->
         <section id="home-screen" class="flex flex-row justify-center min-h-screen text-center">
-        <div class="flex flex-col items-center justify-center">
-            <h1 class="text-[95px] font-anton font-normal leading-[116px] text-white">ALPHABET CLASH</h1>
+           <div class="flex flex-col items-center justify-center">
+            <h1 class="text-[87px] font-anton font-normal leading-[116px] text-white">ALPHABET CLASH</h1>
             <p class="text-white text-lg font-medium">Play games and improve your typing skills.Click to Play</p>
             <button onclick="play()" class="btn text-lg btn-praimary mt-4">Play Now</button>
-        </div>
+           </div>
         </section>
         <!-- home section end -->
-
-        <!-- play-ground-section-end -->
-        <!-- play-ground-section-start -->
-
-        <!-- score-section-start -->
-        <!-- score-section-end -->
+        <!-- play ground section start -->
+        <section id="play-ground" class="hidden">
+            <div class="flex flex-col justify-center items-center gap-4 pt-6">
+                <!-- screen -->
+                <div class="artboard border-[12px] rounded-lg border-[#010313CC] bg-[#FFFFFFB3] artboard-horizontal phone-6"><div class="flex justify-center">
+                    <p class="bg-[#2f2941] py-1 px-6 rounded-b-xl text-white">
+                        Don't watch keyboard  while playing
+                    </p></div>
+                    <div id="current-alphabets" class="flex text-5xl text-black  justify-center items-center h-full">
+                        <p id="current-alphabet" class="text-9xl font-bold text-black uppercase ">Y</p></div>
+                </div>
+                <!-- ------------------>
+                <!-- keyboard start -->
+                <div class="keyboard-container cursor-pointer">
+                    <div class="flex justify-center font-anton font-bold gap-1 text-[20px] my-1 w-full">
+                        <kbd id="q" class="kbd">q</kbd>
+                        <kbd id="w" class="kbd">w</kbd>
+                        <kbd id="e" class="kbd">e</kbd>
+                        <kbd id="r" class="kbd">r</kbd>
+                        <kbd id="t" class="kbd">t</kbd>
+                        <kbd id="y" class="kbd">y</kbd>
+                        <kbd id="u" class="kbd">u</kbd>
+                        <kbd id="i" class="kbd">i</kbd>
+                        <kbd id="o" class="kbd">o</kbd>
+                        <kbd id="p" class="kbd">p</kbd>
+                      </div> 
+                      <div class="flex justify-center font-anton font-bold gap-1 text-[20px] my-1 w-full">
+                        <kbd id="a" class="kbd">a</kbd>
+                        <kbd id="s" class="kbd">s</kbd>
+                        <kbd id="d" class="kbd">d</kbd>
+                        <kbd id="f" class="kbd">f</kbd>
+                        <kbd id="g" class="kbd">g</kbd>
+                        <kbd id="h" class="kbd">h</kbd>
+                        <kbd id="j" class="kbd">j</kbd>
+                        <kbd id="k" class="kbd">k</kbd>
+                        <kbd id="l" class="kbd">l</kbd>
+                      </div> 
+                      <div class="flex justify-center font-anton font-bold gap-1 text-[20px] my-1 w-full">
+                        <kbd id="z" class="kbd">z</kbd>
+                        <kbd id="x" class="kbd">x</kbd>
+                        <kbd id="c" class="kbd">c</kbd>
+                        <kbd id="v" class="kbd">v</kbd>
+                        <kbd id="b" class="kbd">b</kbd>
+                        <kbd id="n" class="kbd">n</kbd>
+                        <kbd id="m" class="kbd">m</kbd>
+                        <kbd id="/" class="kbd">/</kbd>
+                      </div>
+                </div>
+                <!-- keyboard end -->
+                <!-- life score -->
+                <div class="flex justify-between w-3/5">
+                    <button class="btn bg-purple-900 px-6 rounded-full h-2 text-white border-none">Life
+                        <i class="fa-solid fa-heart-circle-xmark"></i>
+                        <span id="current-life">10</span>
+                      </button>
+                      <button class="btn border-none px-6 h-2 rounded-full bg-violet-700 text-white">
+                        Score<i class="fa-solid border-1 bg-white  text-black pt-1 rounded-full h-5 text-center items-center w-5 fa-dollar-sign"></i>
+                        <span id="current-score">0</span>
+                      </button>
+                </div>
+            </div>
+        </section>
+        <!-- play ground section end -->
+        <!-- score section start -->
+        <section id="final-score" class="flex justify-center items-center min-h-screen hidden">
+            <div class="text-center bg-[#FFFFFF33] p-7 rounded-xl space-y-3">
+                <h1 class="text-3xl text-emerald-300 font-extrabold">Game Over 👏</h1>
+                <h1 class="text-white pb-8 text-5xl"><span class="font-extrabold text-5xl text-white">Score :</span> <span id="last-score">14</span></h1>
+                <button onclick="play()" class="btn text-lg bn-praimary font-bold">Play Agin</button>
+                <p class="text-white text-lg font-lg">Practice will make you Pro</p>
+            </div>
+        </section>
     </main>
-    <!-- main-section-end -->
-    <!-- footer-section-start -->
-    <footer>
-
-    </footer>
-    <!-- footer-section-end -->
-    <!-- js file link -->
+    <!-- main section end here -->
     <script src="script/typing.js"></script>
+    <script src="script/utility.js"></script>
 </body>
 </html>
